@@ -1,0 +1,93 @@
+.wrapper{
+    width:900px;
+    height: 610px;
+    margin: 0 auto;
+    display: flex;
+    align-items:center;
+}
+
+.ball-container{
+    width: 196px;
+    height: 396px;
+    padding: 2px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+.ball-container::before {
+    content: '';
+    background-image: linear-gradient(20deg, rgba(24,255,0,1) 0%, rgba(0,94,222,1) 100%);
+    width: 204px;
+    height:404px;
+    top: -2px;
+    left: -2px;
+    position:absolute;
+    z-index:-1;
+}
+
+.ball{
+    width:100px;
+    height:100px;
+    background: rgb(174,201,230);
+    background: radial-gradient(circle, rgba(174,201,230,1) 0%, rgba(81,131,184,1) 48%, rgba(67,121,178,1) 100%);
+    border-radius: 50%;
+}
+
+.text-container {
+    width: 500px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.text-container button{
+    width: 195px;
+    height: 50px;
+    color: white;
+    background-color: #1d5699;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.text-container button:hover {
+    background: rgb(174,201,230);
+    background: linear-gradient(0deg, rgba(174,201,230,1) 0%, rgba(81,131,184,1) 48%, rgba(67,121,178,1) 100%);
+}
+
+.bouncing {
+    animation-name: bouncing;
+    animation-duration: 2.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bouncing
+{
+    0%, 100% {
+        transform: none;
+    }
+    25%{
+        transform: translateY(100px);
+    }
+    55%{
+        transform: translateY(290px);
+    }
+    60% {
+        transform: translateY(315px) scale(1.1, 0.7);
+    }
+    61%{
+        transform: translateY(300px)scale(1,0.9) ;
+    }
+    75%{
+        transform: translateY(150px);
+    }
+    99%{
+        transform: translateY(10px);
+    }
+}
